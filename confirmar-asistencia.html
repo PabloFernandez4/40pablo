@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40 cumpleaños de Pablo · Finca El Torreón</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:#18243a;
+    --parchment:#eef3fa;
+    --primary:#2f5aa8;
+    --primary-deep:#1f3d78;
+    --accent:#9fc1e8;
+    --secondary:#4c6f9e;
+    --line: rgba(24,36,54,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 60px;}
+
+  h1,h2,.display{font-family:'Fraunces', serif;font-weight:600;margin:0;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    padding:40px 20px 44px;
+    color:#eef3fa;
+    background:
+      linear-gradient(180deg, rgba(24,36,58,0.18) 0%, rgba(18,28,46,0.82) 88%),
+      url('https://www.lafincaeventosmurcia.com/assets/images/20250518-140156-2285x1714.jpeg') center/cover;
+  }
+  .hero .eyebrow{font-size:0.95rem;letter-spacing:0.02em;opacity:0.92;margin-bottom:6px;}
+  .hero .number{
+    font-size:clamp(5.5rem, 24vw, 9rem);
+    line-height:0.9;
+    font-style:italic;
+    font-weight:500;
+    color:var(--accent);
+  }
+  .hero .name{font-size:clamp(1.6rem, 6vw, 2.3rem);margin-top:2px;}
+  .hero .date{margin-top:14px;font-size:1.05rem;font-family:'Work Sans', sans-serif;}
+
+  /* SECTIONS */
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.4rem;
+    color:var(--primary);
+    margin-bottom:18px;
+  }
+
+  .detail-list{list-style:none;margin:0;padding:0;}
+  .detail-list li{display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--line);}
+  .detail-list li:first-child{border-top:none;}
+  .detail-list .label{flex:0 0 92px;font-size:0.82rem;color:var(--secondary);padding-top:2px;}
+  .detail-list .value{font-size:1.05rem;}
+  .detail-list a{color:var(--primary);}
+
+  .cal-buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:3px;
+    text-decoration:none;
+    font-size:0.95rem;
+    font-family:'Work Sans', sans-serif;
+    font-weight:500;
+    cursor:pointer;
+    border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--primary);color:#eef3fa;border-color:var(--primary);}
+  .btn-outline{background:transparent;color:var(--ink);}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px;}
+  .gallery .g-left{grid-row:span 2;}
+
+  /* RSVP */
+  .rsvp-box{background:#f7fafd;border:1px solid var(--line);padding:26px;border-radius:4px;}
+  label{display:block;font-size:0.85rem;color:var(--secondary);margin:16px 0 6px;}
+  label:first-of-type{margin-top:0;}
+  input[type=text], input[type=number], textarea{
+    width:100%;
+    padding:10px 12px;
+    font-family:'Work Sans', sans-serif;
+    font-size:1rem;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:#fff;
+    color:var(--ink);
+  }
+  textarea{resize:vertical;min-height:70px;}
+  .counters{display:flex;gap:14px;}
+  .counters > div{flex:1;}
+  .submit-btn{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    background:var(--primary-deep);
+    color:#eef3fa;
+    border:none;
+    border-radius:3px;
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    cursor:pointer;
+  }
+  .submit-btn:disabled{opacity:0.6;}
+  .status-msg{margin-top:14px;font-size:0.92rem;}
+  .status-msg.ok{color:var(--primary-deep);}
+  .status-msg.err{color:#a3372a;}
+
+  .hint{font-size:0.8rem;color:var(--secondary);margin-top:10px;}
+
+  footer{text-align:center;font-size:0.85rem;color:var(--secondary);padding:30px 0 10px;}
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="eyebrow">Estás invitado/a</div>
+    <div class="number">40</div>
+    <h1 class="name">Cumpleaños de Pablo</h1>
+    <div class="date">Sábado 31 de octubre · Finca El Torreón, Murcia</div>
+  </div>
+
+  <div class="wrap">
+
+    <section>
+      <div class="kicker">Los detalles</div>
+      <ul class="detail-list">
+        <li>
+          <div class="label">Cuándo</div>
+          <div class="value">Sábado 31 de octubre, a partir de las 13:00</div>
+        </li>
+        <li>
+          <div class="label">Dónde</div>
+          <div class="value">Finca El Torreón — Carril del Molino, Nº28, Aljucer, 30152 Murcia<br>
+            <a href="https://maps.app.goo.gl/k5du39PQJxm4x6uE6" target="_blank" rel="noopener">Ver en Google Maps →</a>
+          </div>
+        </li>
+        <li>
+          <div class="label">Habrá</div>
+          <div class="value">Comida, bebida, música y actividades para los peques</div>
+        </li>
+      </ul>
+
+      <div class="cal-buttons">
+        <a class="btn btn-solid" target="_blank" rel="noopener"
+           href="https://www.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os%20de%20Pablo%20(40)&dates=20261031T130000/20261031T200000&ctz=Europe/Madrid&details=%C2%A1Celebramos%20los%2040%20de%20Pablo!%20Comida%2C%20m%C3%BAsica%20y%20actividades%20para%20toda%20la%20familia.&location=Carril%20del%20Molino%2C%20N%C2%BA28%2C%20Aljucer%2C%2030152%20Murcia">
+           Añadir a Google Calendar
+        </a>
+        <button class="btn btn-outline" onclick="downloadICS()">Descargar .ics (iPhone/Outlook)</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">La finca</div>
+      <div class="gallery">
+        <img class="g-left" src="https://www.lafincaeventosmurcia.com/assets/images/20250518-140156-2285x1714.jpeg" alt="Finca El Torreón">
+        <img src="https://www.lafincaeventosmurcia.com/assets/images/20250520-110635-1536x1152.jpg" alt="Finca El Torreón jardines">
+        <img src="https://www.lafincaeventosmurcia.com/assets/images/20250323-133358-1536x1152.jpeg" alt="Finca El Torreón salón">
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">Confirma tu asistencia</div>
+      <div class="rsvp-box">
+        <label for="f-name">Tu nombre</label>
+        <input type="text" id="f-name" placeholder="Nombre y apellido">
+
+        <div class="counters">
+          <div>
+            <label for="f-adults">Adultos</label>
+            <input type="number" id="f-adults" min="1" value="1">
+          </div>
+          <div>
+            <label for="f-kids">Niños</label>
+            <input type="number" id="f-kids" min="0" value="0">
+          </div>
+        </div>
+
+        <label for="f-notes">Alergias / algo que debamos saber (opcional)</label>
+        <textarea id="f-notes" placeholder="Ej: alergia a frutos secos, silla para bebé..."></textarea>
+
+        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Confirmar asistencia</button>
+        <div id="status" class="status-msg"></div>
+        <div class="hint">Al confirmar se abrirá tu app de correo con un email ya redactado para Pablo.</div>
+      </div>
+    </section>
+
+    <footer>Cualquier duda, escríbeme directamente · ¡nos vemos el 31!</footer>
+  </div>
+
+<script>
+const ORGANIZER_EMAIL = 'fernandezvpablo86@gmail.com';
+
+function submitRSVP(){
+  const statusEl = document.getElementById('status');
+  const name = document.getElementById('f-name').value.trim();
+  const adults = document.getElementById('f-adults').value;
+  const children = document.getElementById('f-kids').value;
+  const notes = document.getElementById('f-notes').value.trim();
+
+  if(!name){
+    statusEl.textContent = 'Escribe tu nombre para confirmar.';
+    statusEl.className = 'status-msg err';
+    return;
+  }
+
+  const subject = 'Confirmación 40 cumpleaños - ' + name;
+  const lines = [
+    'Nombre: ' + name,
+    'Adultos: ' + adults,
+    'Niños: ' + children
+  ];
+  if(notes){ lines.push('Notas: ' + notes); }
+  const body = lines.join('\n');
+
+  const mailto = 'mailto:' + ORGANIZER_EMAIL
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+
+  statusEl.textContent = 'Abriendo tu app de correo para enviar la confirmación…';
+  statusEl.className = 'status-msg ok';
+  window.location.href = mailto;
+}
+
+function downloadICS(){
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'BEGIN:VEVENT',
+    'DTSTART:20261031T130000',
+    'DTEND:20261031T200000',
+    'SUMMARY:Cumpleaños de Pablo (40)',
+    'DESCRIPTION:Comida\\, música y actividades para toda la familia.',
+    'LOCATION:Carril del Molino\\, Nº28\\, Aljucer\\, 30152 Murcia',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+  const blob = new Blob([ics], {type:'text/calendar'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'cumple-pablo-40.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
